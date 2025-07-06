@@ -89,4 +89,105 @@
 // - Portfolio Website
 // - To-Do or Notes App
 
-//install node 
+// ✅ Installing Node.js
+// - Node.js is a runtime that lets you run JavaScript outside the browser.
+// - It comes with npm (Node Package Manager), which lets you install libraries/tools.
+
+// ⚙️ npm vs npx
+// - `npm` installs packages (libraries) locally or globally.
+// - `npx` is used to execute packages directly without installing them permanently.
+
+// 💡 Example:
+// - `npx create-react-app` → runs the React app generator without saving it globally.
+
+// 🚀 Create a React app (Traditional way)
+// Step 1: npx create-react-app 01_basicsreact
+// Step 2: cd 01_basicsreact
+// Step 3: npm start  // Runs the app in development mode
+
+// 📦 Inside create-react-app, you'll find a file: package.json
+// package.json contains:
+// - All the metadata about your project
+// - Dependencies (libraries)
+// - Scripts to automate tasks (start, build, test, etc.)
+
+// 📜 Scripts inside package.json:
+// - "start" → runs app in development mode (localhost:3000)
+// - "build" → prepares app for production (optimized code)
+// - Browser only understands HTML, CSS, and JavaScript
+//   So React code (JSX) needs to be **transpiled and bundled** (converted) into browser-friendly code using Webpack (CRA default).
+
+// 🧹 Linting
+// - Linting shows syntax or formatting errors in your code.
+// - Helps maintain code quality and avoid bugs.
+
+// ⚡ Problem: create-react-app using `npx` is heavy and slow
+// ➤ Solution: Use **Vite** – a faster, lightweight bundler
+
+// ✨ Creating React App using Vite
+
+// Step 1: npm create vite@latest
+// - Vite will ask for your project name and template (choose React).
+// Example:
+// ? Project name: 01_vitereact
+// ? Select a framework: React
+// ? Select a variant: JavaScript or TypeScript
+
+// Step 2: cd 01_vitereact
+
+// Step 3: npm install (or just npm i)
+// - This installs all required dependencies listed in package.json
+// - After running this, a `node_modules/` folder is created
+//   → It contains all the actual code of libraries (React, Vite, etc.)
+
+// ❓ Why node_modules is missing before running `npm install`?
+// - When you create the project, package.json is created with dependency list,
+//   but nothing is downloaded yet.
+// - Running `npm install` downloads and adds everything into node_modules.
+
+// 🧹 Cleaning up default files:
+// - You can delete unnecessary files like:
+//   - `setupTests.js`
+//   - `App.test.js`
+//   - `logo.svg`
+//   - `reportWebVitals.js`
+//   - Anything else you're not using (to keep the codebase clean)
+
+// 📝 Now, create your Hello World
+// In `src/App.jsx` or `src/App.js`, write:
+    // return <h1>Hello World</h1>;
+
+// 🔁 Start the app
+// - For create-react-app: npm start
+// - For Vite app: npm run dev
+
+// 📌 Summary:
+// React App via CRA:
+//   - Slower, uses Webpack
+//   - `npx create-react-app`
+//   - `npm start`
+//
+// React App via Vite:
+//   - Fast, uses Vite bundler
+//   - `npm create vite@latest`
+//   - `npm install`
+//   - `npm run dev`
+
+// ❓ Question 1: Why is node_modules not created immediately when we create a Vite app?
+// - When you run `npm create vite@latest`, it only scaffolds (creates) the project folder and files.
+// - It sets up the project structure and a `package.json` file with the dependencies listed.
+// - But it does NOT install those dependencies yet.
+// - That’s why `node_modules/` folder is missing at this stage.
+
+// ❓ Question 2: What dependencies are installed when we run `npm install` after creating a Vite-React app?
+// - It installs the dependencies listed in `package.json`:
+//     → "react" and "react-dom" (core libraries for building UI)
+//     → "vite" and "@vitejs/plugin-react" (for fast development and JSX support)
+// - These are downloaded into the `node_modules` folder, which is required for the app to run properly.
+
+// 🔄 Connection between the two:
+// - First, Vite sets up the project and lists the needed dependencies.
+// - Then, `npm install` is used to actually download those dependencies into `node_modules`, making your project ready to run.
+// 🧠 Important Difference:
+// - create-react-app → installs everything automatically (includes node_modules)
+// - vite → you must run `npm install` after project setup to get node_modules
