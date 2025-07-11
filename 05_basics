@@ -1,0 +1,11 @@
+03_tailwindprops 
+we will configure tailwind in tailwindcss.com available 
+npm install -D tailwindcss postcss autoprefixer
+-D?
+npx tailwind init -p
+it is not installing in my laptop lets got through the concept 
+if everythoing installed peroperly then we would get tailwind.config filee 
+className='bg-color
+props?
+whenever we create components or apps,everyone has access to props
+if i use channels then props take that va;ue
